@@ -14,7 +14,7 @@ const PostCard = ({ post, index, onDelete }) => {
       return
     }
     setDeleting(true)
-    axios.delete(`http://localhost:3000/posts/${post._id}`)
+    axios.delete(`https://mern-postboard.onrender.com/posts/${post._id}`)
       .then(() => onDelete(post._id))
       .catch((err) => {
         console.log(err)
@@ -72,7 +72,7 @@ const Feed = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/posts')
+    axios.get('https://mern-postboard.onrender.com/posts')
       .then((res) => setPosts(res.data.posts))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false))

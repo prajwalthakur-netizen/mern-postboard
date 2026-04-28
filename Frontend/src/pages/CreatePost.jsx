@@ -49,7 +49,7 @@ const CreatePost = () => {
       formData.set('image', droppedFile)
     }
 
-    axios.post('http://localhost:3000/create-post', formData)
+    axios.post('https://mern-postboard.onrender.com/create-post', formData)
       .then(() => {
         showToast()
         setTimeout(() => navigate('/feed'), 1400)
